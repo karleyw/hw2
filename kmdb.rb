@@ -102,12 +102,29 @@ puts "There are #{Studio.all.count} studios in the studio table."
 
 new_movie = Movie.new
 new_movie["title"] = "Batman Begins"
-new_movie["year_released"] = 1995
+new_movie["year_released"] = 2005
 new_movie["rated"] = "PG-13"
 new_movie["studio_id"] = 1
 new_movie.save
 
+new_movie1 = Movie.new
+new_movie1["title"] = "The Dark Knight"
+new_movie1["year_released"] = 2008
+new_movie1["rated"] = "PG-13"
+new_movie1["studio_id"] = 1
+new_movie1.save
+
+new_movie2 = Movie.new
+new_movie2["title"] = "The Dark Knight Rises"
+new_movie2["year_released"] = 2012
+new_movie2["rated"] = "PG-13"
+new_movie2["studio_id"] = 1
+new_movie2.save
+
 puts "There are #{Movie.all.count} movies in the movie table."
+
+
+
 
 # Prints a header for the movies output
 puts "Movies"
