@@ -100,6 +100,14 @@ new_studio.save
 
 puts "There are #{Studio.all.count} studios in the studio table."
 
+new_movie = Movie.new
+new_movie["title"] = "Batman Begins"
+new_movie["year_released"] = 1995
+new_movie["rated"] = "PG-13"
+new_movie["studio_id"] = 1
+new_movie.save
+
+puts "There are #{Movie.all.count} movies in the movie table."
 
 # Prints a header for the movies output
 puts "Movies"
