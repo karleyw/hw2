@@ -94,13 +94,11 @@ puts "There are #{Role.all.count} roles in the movies table."
 # Do not use hard-coded foreign key IDs.
 # TODO!
 # Insert data for studio
-new_studio = Studio.new_studio
+new_studio = Studio.new
 new_studio["name"] = "Warner Bros."
 new_studio.save
 
 puts "There are #{Studio.all.count} studios in the studio table."
-all_studios = Studio.all
-puts all_studios.inspect
 
 
 # Prints a header for the movies output
