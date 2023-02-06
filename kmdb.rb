@@ -85,11 +85,23 @@ Role.destroy_all
 # Enter info to in migrate files to create columns THEN migrate
 # rails db:migrate
 
-
+puts "There are #{Studio.all.count} studios in the studio table."
+puts "There are #{Movie.all.count} movies in the movies table."
+puts "There are #{Actor.all.count} actors in the actors table."
+puts "There are #{Role.all.count} roles in the movies table."
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
 # TODO!
+# Insert data for studio
+new_studio = Studio.new_studio
+new_studio["name"] = "Warner Bros."
+new_studio.save
+
+puts "There are #{Studio.all.count} studios in the studio table."
+all_studios = Studio.all
+puts all_studios.inspect
+
 
 # Prints a header for the movies output
 puts "Movies"
