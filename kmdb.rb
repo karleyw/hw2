@@ -127,6 +127,58 @@ actor1 = Actor.new
 actor1["name"] = "Christian Bale"
 actor1.save
 
+actor2 = Actor.new
+actor2["name"] = "Michael Caine"
+actor2.save
+
+actor3 = Actor.new
+actor3["name"] = "Liam Neeson"
+actor3.save
+
+actor4 = Actor.new
+actor4["name"] = "Katie Holmes"
+actor4.save
+
+actor5 = Actor.new
+actor5["name"] = "Gary Oldman"
+actor5.save
+
+actor6 = Actor.new
+actor6["name"] = "Heath Ledger"
+actor6.save
+
+actor7 = Actor.new
+actor7["name"] = "Aaron Eckhart"
+actor7.save
+
+actor8 = Actor.new
+actor8["name"] = "Heath Ledger"
+actor8.save
+
+actor9 = Actor.new
+actor9["name"] = "Maggie Gyllenhaal"
+actor9.save
+
+actor10 = Actor.new
+actor10["name"] = "Tom Hardy"
+actor10.save
+
+actor11 = Actor.new
+actor11["name"] = "Joseph Gordon-Levitt"
+actor11.save
+
+actor12 = Actor.new
+actor12["name"] = "Anne Hathaway"
+actor12.save
+
+puts "There are #{Actor.all.count} actors in the actor table."
+
+role1 = Role.new
+role1["movie_id"] = 1
+role1["actor_id"] = 1
+role1["character_name"] = "Bruce Wayne"
+role1.save
+
 
 # Prints a header for the movies output
 puts "Movies"
@@ -158,10 +210,12 @@ puts ""
 # TODO!
 roles = Role.all
 actors = Actor.all
-for roles in roles
-    title = Movie.find_by({"id" => role["movie_id"]})
-    actor = Actor.find_by({"id" => role["name"]})
-    # title = movie_id["title"]
-    puts "#{title} #{actor}" 
+for role in roles
+    movie_id = Movie.find_by({"id" => role["movie_id"]})
+    actor_id = Actor.find_by({"id" => role["actor_id"]})
+    movie_title = movie_id["title"]
+    actor_name = actor_id["name"]
+    actor_role = role["name"]
+    puts "#{movie_title} #{actor_name} #{actor_role}" 
 end
 
