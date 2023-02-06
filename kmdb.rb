@@ -123,6 +123,10 @@ new_movie2.save
 
 puts "There are #{Movie.all.count} movies in the movie table."
 
+actor1 = Actor.new
+actor1["name"] = "Christian Bale"
+actor1.save
+
 
 # Prints a header for the movies output
 puts "Movies"
@@ -140,7 +144,7 @@ for movie in movies
     rated = movie["rated"]
     studio_id = Studio.find_by({"id" => movie["studio_id"]})
     #studio_name = studio_id["name"]
-    puts "#{title} #{year_released} #{rated} #{studio_id}"
+    puts "#{title} #{year_released} #{rated} #{studio_id}" # need to add studio name
 end
 
 
@@ -152,3 +156,12 @@ puts ""
 
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
+roles = Role.all
+actors = Actor.all
+for roles in roles
+    title = Movie.find_by({"id" => role["movie_id"]})
+    actor = Actor.find_by({"id" => role["name"]})
+    # title = movie_id["title"]
+    puts "#{title} #{actor}" 
+end
+
